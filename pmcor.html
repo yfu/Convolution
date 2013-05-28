@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Generate the SCNA Significance Plots of Two Types</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for pmcor"><tr><td>pmcor</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Generate the SCNA Significance Plots of Two Types</h2>
+
+<h3>Description</h3>
+
+<p>Generate the SCNA significance plots of two types:
+</p>
+<p>whole-genome based:
+</p>
+<p>if a SCNA region spans exome boundaries, interpolate between the two
+exomes (by showing CN level in the intron segment at the same level as
+in the two flanking exons).
+</p>
+<p>coverage-based: i.e., plotting only the region covered by the
+sequencing reads (in our case, the MCOR regions). This will be
+achieved by constructing the x-axis as the joining of all the regions.
+</p>
+<p>For both, we discussed having different options on how to join
+non-adjacent regions ('zero', 'interpolation', 'min').
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+pmcor(file, base.on="coverage", join.method)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>file is the location of the file containing the mcor
+output their genomic coordiantes.</p>
+</td></tr>
+<tr valign="top"><td><code>base.on</code></td>
+<td>
+<p>base.on should be &quot;coverage&quot; or &quot;genome&quot;</p>
+</td></tr>
+<tr valign="top"><td><code>join.method</code></td>
+<td>
+<p>join.method should be &quot;zero&quot;, &quot;interpolate&quot; or &quot;min&quot;</p>
+</td></tr>
+</table>
+
+
+<h3>Author(s)</h3>
+
+<p>Yu Fu <a href="mailto:f@yfu.me">f@yfu.me</a></p>
+
+
+<h3>References</h3>
+
+<p><a href="https://projects.zoho.com/portal/montilab#wiki/465555000000032025/Scoring-SCNAs.html">https://projects.zoho.com/portal/montilab#wiki/465555000000032025/Scoring-SCNAs.html</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>pmatch</code>, <code>ggplot</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Using the default parameters
+pmcor(file, base.on="coverage", join.method)
+
+## Using other "bases" and joining method
+pmcor(file, base.on="coverage", joining.method="min")
+</pre>
+
+
+</body></html>
