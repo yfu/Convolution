@@ -1,4 +1,4 @@
 Convolution
 ===========
 
-Calculate p-values for Copynumber Variations across Samples
+Calculate p-values for copynumber variations across samples
